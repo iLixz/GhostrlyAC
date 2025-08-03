@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GhostlyAC - Registro</title>
+  <style>
+    /* Fondo con degradado azul oscuro y negro */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #001f4d, #000000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .register-box {
+      background-color: rgba(0, 0, 0, 0.75);
+      border: 2px solid #00aaff;
+      border-radius: 12px;
+      padding: 30px 40px;
+      width: 320px;
+      box-shadow: 0 0 15px #00aaff;
+      text-align: center;
+    }
+
+    .register-box h1 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 28px;
+      color: #00cfff;
+      text-shadow: 0 0 8px #00cfff;
+    }
+
+    .register-box input[type="text"],
+    .register-box input[type="email"],
+    .register-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .register-box button {
+      background-color: #00aaff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    .register-box button:hover {
+      background-color: #008ecc;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-box">
+    <h1>GhostlyAC</h1>
+    <form>
+      <input type="text" placeholder="Nombre de usuario" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</body>
+</html>
