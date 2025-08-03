@@ -1,154 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GhostlyAC - Fake Minecraft Anticheat</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-  
-  body {
-    margin: 0;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #cbd5e1;
-    font-family: 'Orbitron', monospace, monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 30px 20px;
-    user-select: none;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GhostlyAC - Registro</title>
+  <style>
+    /* Fondo con degradado azul oscuro y negro */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #001f4d, #000000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
 
-  /* Fantasma ASCII */
-  pre.ascii-logo {
-    font-size: 16px;
-    line-height: 14px;
-    color: #00ffff;
-    text-shadow: 0 0 8px #00ffff, 0 0 20px #00ffff;
-    margin: 0 0 20px 0;
-    user-select: text;
-  }
+    .register-box {
+      background-color: rgba(0, 0, 0, 0.75);
+      border: 2px solid #00aaff;
+      border-radius: 12px;
+      padding: 30px 40px;
+      width: 320px;
+      box-shadow: 0 0 15px #00aaff;
+      text-align: center;
+    }
 
-  h1 {
-    margin: 0;
-    font-size: 3.5rem;
-    text-align: center;
-    text-shadow: 0 0 12px #00ffff;
-  }
+    .register-box h1 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 28px;
+      color: #00cfff;
+      text-shadow: 0 0 8px #00cfff;
+    }
 
-  .subtitle {
-    font-size: 1.2rem;
-    margin: 6px 0 30px 0;
-    color: #a0c4ff;
-    text-align: center;
-    font-style: italic;
-  }
+    .register-box input[type="text"],
+    .register-box input[type="email"],
+    .register-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+    }
 
-  button#scanBtn {
-    cursor: pointer;
-    background: #00ffff;
-    border: none;
-    border-radius: 12px;
-    padding: 15px 45px;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #0a0a0a;
-    box-shadow: 0 4px 8px #00ffffaa;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    user-select: none;
-  }
-  button#scanBtn:hover:not(:disabled) {
-    background: #00cccc;
-    box-shadow: 0 6px 14px #00cccccc;
-  }
-  button#scanBtn:disabled {
-    background: #006666;
-    cursor: not-allowed;
-    box-shadow: none;
-  }
+    .register-box button {
+      background-color: #00aaff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
 
-  #result {
-    margin-top: 45px;
-    font-size: 1.5rem;
-    min-height: 90px;
-    text-align: center;
-    color: #f0f8ff;
-    text-shadow: 0 0 6px #00ffffaa;
-  }
-
-  .loading {
-    font-style: italic;
-    animation: blink 1.2s steps(2, start) infinite;
-  }
-  @keyframes blink {
-    0%, 100% {opacity: 1;}
-    50% {opacity: 0;}
-  }
-
-  footer {
-    margin-top: auto;
-    font-size: 0.8rem;
-    color: #555;
-    user-select: none;
-  }
-</style>
+    .register-box button:hover {
+      background-color: #008ecc;
+    }
+  </style>
 </head>
 <body>
-
-<pre class="ascii-logo">
-  .--.
- / _.-'
-|  (
-|  |
-|  |
-|  |
- \_ \
-   '--'
-</pre>
-
-<h1>GhostlyAC</h1>
-<div class="subtitle">El anticheat fantasma para Minecraft</div>
-
-<button id="scanBtn">Iniciar Escaneo</button>
-
-<div id="result"></div>
-
-<footer>© 2025 GhostlyAC - Para bromear, no es real.</footer>
-
-<script>
-  const scanBtn = document.getElementById('scanBtn');
-  const resultDiv = document.getElementById('result');
-
-  const fakeCheats = [
-    "SuperJump 9000",
-    "FlyHack Pro",
-    "X-Ray Vision v3",
-    "AutoMiner Deluxe",
-    "Infinite Health Mod",
-    "SpeedRunner Extreme",
-    "WallHack Ultimate"
-  ];
-
-  scanBtn.addEventListener('click', () => {
-    resultDiv.textContent = "Escaneando cheats sospechosos...";
-    resultDiv.classList.add('loading');
-    scanBtn.disabled = true;
-
-    setTimeout(() => {
-      resultDiv.classList.remove('loading');
-
-      const detected = Math.random() < 0.7;
-      if (detected) {
-        const cheat = fakeCheats[Math.floor(Math.random() * fakeCheats.length)];
-        resultDiv.innerHTML = `Cheat detectado: <strong>${cheat}</strong><br>¡Baneo fantasmal en proceso! 👻🔨`;
-      } else {
-        resultDiv.innerHTML = `No se detectaron cheats.<br>Pero igual, ojo... GhostlyAC te vigila.`;
-      }
-      scanBtn.disabled = false;
-    }, 4000);
-  });
-</script>
-
+  <div class="register-box">
+    <h1>GhostlyAC</h1>
+    <form>
+      <input type="text" placeholder="Nombre de usuario" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
 </body>
 </html>
